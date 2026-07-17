@@ -1,0 +1,45 @@
+{
+  "name": "n8n-nodes-falaai",
+  "version": "1.1.0",
+  "description": "Nodes da Fala.ai para n8n - WhatsApp Cloud API",
+  "keywords": [
+    "n8n-community-node-package",
+    "whatsapp",
+    "falaai"
+  ],
+  "license": "MIT",
+  "homepage": "https://falaaiinteligencia.com.br",
+  "author": {
+    "name": "Fala.ai Inteligência",
+    "email": "contato@falaaiinteligencia.com.br"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaokun/n8n-nodes-falaai"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && cp -r src/nodes/WhatsAppTemplate/whatsapp.png src/nodes/WhatsAppTemplate/whatsapp.svg dist/nodes/WhatsAppTemplate/",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/WhatsAppCloudApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/WhatsAppTemplate/WhatsAppTemplate.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "n8n-workflow": "^2.16.0",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
